@@ -1,0 +1,23 @@
+name: build-and-push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Login a Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASS }}
+
+      - name: Construir y publicar imagen
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: van3ss4/appdocker:latest
