@@ -43,7 +43,3 @@ Una vez publicada la imagen, puedes ejecutar la aplicación en cualquier máquin
 
 ```bash
 docker run <tu-usuario-docker>/appdocker:latest
-
-## 👩‍💻 Autora
-
-*Vanessa Rodriguez*
